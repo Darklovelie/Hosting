@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, My Love!</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Lock Screen -->
+  <div id="lock-screen">
+    <div class="lock-content">
+      <h2>Enter Password to Unlock</h2>
+      <input type="password" id="password-input" placeholder="Password">
+      <button onclick="unlockWebsite()"><i class="fas fa-lock-open"></i> Unlock</button>
+      <p id="error-message" style="color: red; display: none;">Incorrect Password!</p>
+    </div>
+  </div>
+
+  <!-- Main Content (Hidden by Default) -->
+  <div id="main-content" style="display: none;">
+    <!-- Header -->
+    <header>
+      <h1>Happy Birthday, My Love! 🎉</h1>
+      <p>To the most amazing person in my life...</p>
+      <audio id="birthday-song" autoplay loop>
+        <source src="birthday-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </header>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+      <h2>Our Memories</h2>
+      <div class="gallery-container">
+        <img src="images/photo1.jpg" alt="Memory 1" onclick="openLightbox('images/photo1.jpg')">
+        <img src="images/photo2.jpg" alt="Memory 2" onclick="openLightbox('images/photo2.jpg')">
+        <img src="images/photo3.jpg" alt="Memory 3" onclick="openLightbox('images/photo3.jpg')">
+        <!-- Add more images as needed -->
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+
+    <!-- Quotes Section -->
+    <section id="quotes">
+      <h2>Quotes for You</h2>
+      <div class="quote-carousel">
+        <div class="quote active">
+          <p>"You are my today and all of my tomorrows."</p>
+        </div>
+        <div class="quote">
+          <p>"In your smile, I see something more beautiful than the stars."</p>
+        </div>
+        <div class="quote">
+          <p>"Every moment with you is a memory I treasure."</p>
+        </div>
+        <!-- Add more quotes as needed -->
+      </div>
+      <button class="carousel-btn prev" onclick="prevQuote()"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn next" onclick="nextQuote()"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with ❤️ by [Your Name]</p>
+    </footer>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
